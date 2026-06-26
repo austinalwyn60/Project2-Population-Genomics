@@ -30,3 +30,4 @@ To analyze allele frequency differences of 10 clinically important pharmacogenom
 This project highlights the need for population-specific pharmacogenomic guidelines in India.
 
 **Project completed as per requirements.**
+# Project2-Population-Genomics
