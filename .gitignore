@@ -1,0 +1,4 @@
+*.vcf.gz
+*.tbi
+__MACOSX
+.DS_Store
