@@ -4,8 +4,6 @@
 
 An in-depth analysis of **10 clinically actionable pharmacogenomic variants** using **1000 Genomes Phase 3** data.
 
-![Project Banner](https://via.placeholder.com/1200x300/0A2540/FFFFFF?text=Population+Pharmacogenomics)  
-*(Replace with a generated banner or scientific plot)*
 
 ## 📋 Table of Contents
 - [Overview](#overview)
