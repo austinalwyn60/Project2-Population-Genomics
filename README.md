@@ -7,7 +7,7 @@ Population-Stratified Allele Frequency Analysis of Pharmacogenomic Variants Acro
 **Date:** 26 June 2026
 
 ## Objective
-To analyze allele frequency differences of 10 clinically important pharmacogenomic variants between South Asian (SAS) and European (EUR) populations and discuss implications for Indian patients.
+To analyze allele frequency differences of clinically important pharmacogenomic variants between South Asian (SAS) and European (EUR) populations and discuss implications for Indian patients.
 
 ## Key Files
 - `results/frequency_data.csv` - Frequency data for 10 variants
@@ -25,6 +25,7 @@ To analyze allele frequency differences of 10 clinically important pharmacogenom
 ## Tools Used
 - R + ggplot2
 - 1000 Genomes Phase 3 Data
+- bcf tool
 
 ## Conclusion
 This project highlights the need for population-specific pharmacogenomic guidelines in India.
