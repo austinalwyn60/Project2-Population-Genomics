@@ -591,8 +591,7 @@ for several commonly prescribed medications.
 - gnomAD: gnomad.broadinstitute.org
 
 ---
-Date: [Your Date]
-Author: [Your Name]
+Author: Austin D Almeida
 EOF
 
 # Commit report
@@ -632,127 +631,6 @@ git push -u origin main
 # Push with tags (if applicable)
 git push origin --all
 git push origin --tags
-
-================================================================================
-PART 15: FINAL PROJECT STRUCTURE & FILE CHECKLIST
-================================================================================
-
-# Verify final directory structure
-tree -L 2 .
-
-# Expected structure:
-# Population_Genomics_Project/
-# ├── data/
-# │   ├── vcf_files/
-# │   │   ├── 1000_genomes.vcf.gz
-# │   │   └── 1000_genomes.vcf.gz.tbi
-# │   └── raw_variants/
-# │       ├── variants_to_extract.txt
-# │       └── variant_info.txt
-# ├── scripts/
-# │   ├── extract_variants.sh
-# │   ├── calculate_frequencies.sh
-# │   ├── analysis.R
-# │   ├── validate_gnomad.R
-# │   └── create_summary_table.R
-# ├── results/
-# │   ├── frequencies.txt
-# │   ├── allele_frequency_table.txt
-# │   ├── summary_statistics.txt
-# │   ├── clinical_significance_summary.txt
-# │   └── vcf_stats.txt
-# ├── plots/
-# │   └── Population_Frequency_Comparison.png
-# ├── validation/
-# │   └── gnomAD_comparison.txt
-# ├── .gitignore
-# ├── README.md
-# └── Project2_Report.md
-
-# Verify all key files exist
-echo "=== FINAL CHECKLIST ==="
-echo "Scripts:"
-ls -lh scripts/
-echo ""
-echo "Results:"
-ls -lh results/
-echo ""
-echo "Plots:"
-ls -lh plots/
-echo ""
-echo "Validation:"
-ls -lh validation/
-
-================================================================================
-PART 16: USEFUL GIT COMMANDS FOR PROJECT MANAGEMENT
-================================================================================
-
-# View git log with nice format
-git log --graph --oneline --all
-
-# Create a git tag for final submission
-git tag -a v1.0 -m "Final Project 2 Submission"
-git push origin v1.0
-
-# Check changes before committing
-git diff
-
-# View file history
-git log --oneline -- results/frequencies.txt
-
-# Stash changes if needed (temporary save)
-git stash
-
-# Restore stashed changes
-git stash pop
-
-# Create a new branch for experimental work
-git checkout -b experimental-analysis
-
-# Switch back to main branch
-git checkout main
-
-# Merge experimental branch
-git merge experimental-analysis
-
-# Delete a branch
-git branch -d experimental-analysis
-
-# Undo last commit (keep changes)
-git reset --soft HEAD~1
-
-# Undo last commit (discard changes)
-git reset --hard HEAD~1
-
-================================================================================
-PART 17: TROUBLESHOOTING COMMANDS
-================================================================================
-
-# If bcftools not found
-which bcftools
-bcftools --version
-
-# If R packages fail to install
-# In R:
-# install.packages("ggplot2", repos="http://cran.r-project.org")
-
-# Check VCF file integrity
-bcftools view data/vcf_files/1000_genomes.vcf.gz > /dev/null && echo "VCF is valid"
-
-# Reindex VCF if index missing
-bcftools index results/pharm_variants.vcf.gz
-
-# Check disk space used
-du -sh data/
-du -sh results/
-du -sh .
-
-# Clean up temporary files
-rm -f *.tmp results/*.tmp
-
-# Reset git to remote state (if needed)
-git fetch origin
-git reset --hard origin/main
 
 ================================================================================
 PART 18: FINAL GIT PUSH COMMANDS
@@ -799,43 +677,6 @@ echo "=== PROJECT COMPLETE ==="
 echo "All commits pushed to remote repository"
 echo "Backup created: Population_Genomics_Backup.tar.gz"
 
-================================================================================
-ADDITIONAL NOTES
-================================================================================
-
-1. VCF File Management:
-   - Large VCF files (>1GB) may require significant disk space
-   - Use .gitignore to exclude VCF files from version control
-   - Consider storing only metadata and results
-
-2. Frequency Calculation:
-   - Update the frequencies with actual calculated values from bcftools
-   - Ensure population codes match (SAS, EUR, EAS, AFR)
-   - Validate sample sizes for each population
-
-3. R Analysis:
-   - Install packages before running: install.packages(c("ggplot2", "reshape2"))
-   - Update frequencies in analysis.R with your calculated values
-   - Customize visualizations as needed
-
-4. GitHub Best Practices:
-   - Commit frequently with meaningful messages
-   - Use branches for experimental work
-   - Always pull before pushing if collaborating
-   - Document all steps in README.md
-
-5. Data Validation:
-   - Always cross-validate with gnomAD or other public databases
-   - Check sample sizes for each population
-   - Verify variant rsIDs are correct
-   - Ensure quality of extracted variants
-
-6. Report Writing:
-   - Include all methodology details
-   - Provide context for clinical significance
-   - Cite data sources (1000 Genomes, gnomAD, PharmGKB)
-   - Discuss limitations and implications
-
-================================================================================
+====================================================================
 END OF COMMAND REFERENCE
 ================================================================================
