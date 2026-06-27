@@ -1,8 +1,0 @@
-gnomAD Cross-Validation (Approximate values)
-
-Variant       1000G SAS    gnomAD SAS    Comment
-rs4244285     0.32         0.31          Good match
-rs4149056     0.18         0.17          Good match
-rs3892097     0.25         0.24          Good match
-
-Validation successful - frequencies are consistent.
